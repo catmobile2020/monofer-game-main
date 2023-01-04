@@ -1,0 +1,377 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
+* {
+	padding: 0;
+	margin: 0;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+  }
+  
+  body {
+	height: 100vh;
+	overflow: hidden;
+	background: url('../images/background.png');
+
+  background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+  .sectoonCon{
+	height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+
+  }
+  
+  .memory-game {
+	width: 100%;
+	height: 640px;
+	margin: auto;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+	-webkit-perspective: 1000px;
+	        perspective: 1000px;
+  }
+  
+  .memory-card {
+	width: calc(16% - 15px);
+	height: calc(24% - 10px);
+	margin: 5px;
+	position: relative;
+   -webkit-perspective: 800px;
+          perspective: 800px;
+	-webkit-transform: scale(1);
+	    -ms-transform: scale(1);
+	        transform: scale(1);
+	-webkit-transform-style: preserve-3d;
+	        transform-style: preserve-3d;
+	-webkit-transition: -webkit-transform .5s;
+	transition: -webkit-transform .5s;
+	-o-transition: transform .5s;
+	transition: transform .5s;
+	transition: transform .5s, -webkit-transform .5s; 
+	cursor: pointer;
+  -ms-touch-action: none;
+      touch-action: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  }
+  
+  .memory-card:active {
+	-webkit-transform: scale(0.97);
+	    -ms-transform: scale(0.97);
+	        transform: scale(0.97);
+	-webkit-transition: -webkit-transform .2s;
+	transition: -webkit-transform .2s;
+	-o-transition: transform .2s;
+	transition: transform .2s;
+	transition: transform .2s, -webkit-transform .2s;
+  }
+  
+  .memory-card.flip {
+ 
+	        -webkit-transform: rotateY(180deg);
+ 
+	                transform: rotateY(180deg);
+  }
+  
+  .front-face,
+  .back-face {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	border-radius: 5px;
+  -webkit-transform:translateZ(0.01px);
+    transform: translateZ(0.01px);
+ 
+ -webkit-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+
+  -webkit-perspective: 1000;
+ -webkit-backface-visibility: visible;
+  -webkit-backface-visibility: hidden;
+  
+  visibility:visible;
+  backface-visibility: hidden; 
+  }
+  
+  .front-face {
+
+	        -webkit-transform: rotateY(180deg);
+
+	                transform: rotateY(180deg);
+  }
+  #saveDoctor{
+    background: #d4f6ff;
+    /* background: linear-gradient(90deg, rgba(245,212,68,1) 0%, rgba(233,181,64,1) 100%); */
+	  color: #16468e;
+	  padding: 10px;
+	  border-radius: 10px;
+	  border: none;
+    width: 20%;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1rem;
+  }
+  .conOfdocName{
+	  display: -webkit-box;
+	  display: -ms-flexbox;
+	  display: flex;
+	  height: 100%;
+
+  }
+   .gameBoard{
+	  display: none;
+  }
+  .number{
+	width: 100%;
+    height: 100%;
+    color: #fff;
+    font-size: 65px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: absolute;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .score-label{
+	color: #16468e;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 20px;
+  }
+  .conOfScore{
+	  -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+  .conOfBtns{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 60px;
+
+  }
+  .exportPdfBtn{
+	  margin: 10px;
+	 
+  }
+  .final-content{
+	border-radius: 10px;
+    background: #39476a;
+	font-size: 25px;
+    font-weight: bold;
+	color: #fff;
+	
+  }
+  .references-modal{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100%!important;
+    max-width: unset;
+  }
+  #references.modal-content{
+    padding: 0;
+    height: 100%;
+  }
+  .carousel-item{
+    cursor: pointer;
+  }
+  .over{
+    color: #53647f;
+    font-size: 8rem;
+    font-weight: 600;
+  }
+  .conOfOver{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .conStartGame{
+    background: url('../images/startBG.png');
+	background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+  .start-btn{
+    width: 35%;
+    cursor: pointer;
+  }
+  #exportData{
+    border: none;
+    padding: 15px;
+    color: #53647f;
+
+  }
+  .conOfStartBtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 56%;
+ 
+  }
+  .conOfref{
+    position: absolute;
+    left: 0.2%;
+    bottom: 1%;
+    width: 9%;
+    cursor: pointer;
+  }
+  .carousel-item{
+    height: 100vh !important;
+  }
+  .ref-body{
+    font-size: 0.8rem;
+    font-weight: bold;
+    background: rgb(194,213,219);
+    background: linear-gradient(90deg, rgba(194,213,219,1) 0%, rgba(244,218,167,1) 100%);
+  }
+  .back{
+    cursor: pointer;
+    width: 20%;
+    border-radius: 12px;
+    text-align: center;
+    padding: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.2rem;
+    background: rgb(245,212,68);
+background: linear-gradient(90deg, rgba(245,212,68,1) 0%, rgba(233,181,64,1) 100%);
+  }
+  @media (orientation: portrait) {
+    #saveDoctor{
+      background: rgb(245,212,68);
+      background: linear-gradient(90deg, rgba(245,212,68,1) 0%, rgba(233,181,64,1) 100%);
+      color: #53647f;
+            padding: 10px;
+      border-radius: 50px;
+      border: none;
+      width: 30%;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+    .memory-game {
+      height: 99%!important;}
+    .back{
+      cursor: pointer;
+      width: 50% !important;
+      border-radius: 12px;
+      text-align: center;
+      padding: 10px;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 1rem;
+      margin-bottom: 5px;
+      background: rgb(245,212,68);
+  background: linear-gradient(90deg, rgba(245,212,68,1) 0%, rgba(233,181,64,1) 100%);
+    }
+    .references-modal{
+      margin: 0;
+      padding: 0;
+      height: unset !important;
+      width: 100%!important;
+      max-width: unset;
+    }
+    .start-btn {
+      width: 30% !important;
+      cursor: pointer;
+  }
+  .conStartGame{
+    background: url('../images/start-mob.png') !important;
+	background-repeat: no-repeat !important;
+    background-size: 100% 100% !important;
+  }
+  .conOfref {
+    position: unset;
+   
+    width: 30% !important;}
+    .over {
+      color: #53647f;
+      font-size: 2.5rem !important;
+      font-weight: 600;
+  }
+    .memory-card {
+      width: calc(34% - 15px);
+      height: calc(14% - 10px);
+      margin: 5px;
+      position: relative;
+      -webkit-transform: scale(1);
+          -ms-transform: scale(1);
+              transform: scale(1);
+      -webkit-transform-style: preserve-3d;
+              transform-style: preserve-3d;
+      -webkit-transition: -webkit-transform .5s;
+      transition: -webkit-transform .5s;
+      -o-transition: transform .5s;
+      transition: transform .5s;
+      transition: transform .5s, -webkit-transform .5s;
+      cursor: pointer;
+  }
+  .score-label {
+    color: #3064a0;
+    font-size: 20px;
+    font-weight: bold;
+}
+.sectoonCon{
+  padding: 20px 0px;
+
+}
+  }
+  @media (min-width: 765px){
+   
+    .references-modal{
+      height: 100% !important;
+      margin: 0;
+      padding: 0;
+      width: 100%!important;
+      max-width: unset;
+    }
+    }
+  @media (min-width: 1440px){
+   
+    .ref-body{
+      font-size: 1rem;
+    }
+    }
+  @media (min-width: 1800px){
+.container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    max-width: 1520px;
+}
+.ref-body{
+  font-size: 1.5rem;
+}
+}
