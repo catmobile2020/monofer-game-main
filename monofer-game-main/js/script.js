@@ -34,29 +34,30 @@ function startTimer(duration, display) {
 
     if (diff <= 0) {
       // add one second so that the count down starts at the full duration
-      // example 05:00 not 04:59
+      // example 05: 00 not 04: 59
       start = Date.now() + 1000;
       clearInterval(timerstart)
       window.location.href = 'gameOver.html'
-      /* 		if (JSON.parse(localStorage.getItem("ListOfUsers")))
-          saveDataAsArray = JSON.parse(localStorage.getItem("ListOfUsers"));
-        
-          let getName = "";
-          if (localStorage.getItem("name")) getName = localStorage.getItem("name");
-          else getName = "doctor";
-        
-          currentDataOBJ["name"] = getName;
-          currentDataOBJ["correct"] = score;
-          
-          saveDataAsArray.push(currentDataOBJ);
-          localStorage.setItem("ListOfUsers", JSON.stringify(saveDataAsArray));
-          cards.forEach(card => card.removeEventListener('click', flipCard));
-          document.getElementById("docScore").innerHTML = score;
-          document.getElementById("docName").innerHTML = docName;
-          document.getElementById("finaltime").innerHTML =  minutes + ":" + seconds; 
-      	
-      	
-          $('#final').modal('show') */
+      if (JSON.parse(localStorage.getItem("ListOfUsers")))
+        saveDataAsArray = JSON.parse(localStorage.getItem("ListOfUsers"));
+
+      let getName = "";
+      if (localStorage.getItem("name")) getName = localStorage.getItem("name");
+      else getName = "doctor";
+
+      currentDataOBJ["name"] = getName;
+      currentDataOBJ["correct"] = score;
+      currentDataOBJ["time"] = minutes + ":" + seconds;
+
+      saveDataAsArray.push(currentDataOBJ);
+      localStorage.setItem("ListOfUsers", JSON.stringify(saveDataAsArray));
+      cards.forEach(card => card.removeEventListener('click', flipCard));
+      document.getElementById("docScore").innerHTML = score;
+      document.getElementById("docName").innerHTML = docName;
+      document.getElementById("finaltime").innerHTML = minutes + ":" + seconds;
+
+      console.log(minutes + ":" + seconds)
+      $('#final').modal('show')
     }
   };
   // we don't want to wait a full second before the timer starts
@@ -109,6 +110,7 @@ function checkForMatch() {
 
     currentDataOBJ["name"] = getName;
     currentDataOBJ["correct"] = score;
+    currentDataOBJ["scoretime"] = 60 - seconds;
 
     saveDataAsArray.push(currentDataOBJ);
     localStorage.setItem("ListOfUsers", JSON.stringify(saveDataAsArray));
@@ -206,5 +208,39 @@ $(document).ready(function () {
       body: myDataArray,
     })
     doc.save('table.pdf')
+  });
+});
+// =========================
+$(document).ready(function () {
+
+
+  $("#final").on("click", function () {
+    let myDataArray = [];
+    let exportData = JSON.parse(localStorage.getItem("ListOfUsers"));
+    let tableHeader = Object.keys(exportData[0])
+
+    exportData.forEach((el) => {
+
+      myDataArray.push([
+        el["name"],
+        `${el["correct"]} of 9`,
+        `${el["scoretime"]}` == 'undefined' ? '00:60 of 00:60 ' : `00:${el["scoretime"]} of 00:60`,
+
+
+      ])
+      // console.log(typeof `${el["scoretime"]}`)
+      console.log("scoretime", `${el["scoretime"]}` == 'undefined' ? '00:00' : `${el[`"00":"scoretime"`]}`)
+    });
+
+
+    const doc = new jsPDF()
+    doc.autoTable({
+      head: [
+        ['Dr.Name', 'Score', 'Time'
+        ]
+      ],
+      body: myDataArray,
+    })
+    doc.output('dataurlnewwindow');
   });
 });

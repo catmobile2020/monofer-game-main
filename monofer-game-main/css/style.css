@@ -271,6 +271,23 @@
     background: rgb(245,212,68);
 background: linear-gradient(90deg, rgba(245,212,68,1) 0%, rgba(233,181,64,1) 100%);
   }
+  .contOfTopScore{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .topScore{
+    padding: 20px;
+    cursor: pointer;
+    border-radius: 12px;
+    text-align: center;
+    padding: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.2rem;
+    background: rgb(245,212,68);
+background: linear-gradient(90deg, rgba(245,212,68,1) 0%, rgba(233,181,64,1) 100%);
+  }
   @media (orientation: portrait) {
     #saveDoctor{
       background: rgb(245,212,68);
