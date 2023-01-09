@@ -38,26 +38,26 @@ function startTimer(duration, display) {
       start = Date.now() + 1000;
       clearInterval(timerstart)
       window.location.href = 'gameOver.html'
-      if (JSON.parse(localStorage.getItem("ListOfUsers")))
-        saveDataAsArray = JSON.parse(localStorage.getItem("ListOfUsers"));
+      // if (JSON.parse(localStorage.getItem("ListOfUsers")))
+      //   saveDataAsArray = JSON.parse(localStorage.getItem("ListOfUsers"));
 
-      let getName = "";
-      if (localStorage.getItem("name")) getName = localStorage.getItem("name");
-      else getName = "doctor";
+      // let getName = "";
+      // if (localStorage.getItem("name")) getName = localStorage.getItem("name");
+      // else getName = "doctor";
 
-      currentDataOBJ["name"] = getName;
-      currentDataOBJ["correct"] = score;
-      currentDataOBJ["time"] = minutes + ":" + seconds;
+      // currentDataOBJ["name"] = getName;
+      // currentDataOBJ["correct"] = score;
+      // currentDataOBJ["time"] = minutes + ":" + seconds;
 
-      saveDataAsArray.push(currentDataOBJ);
-      localStorage.setItem("ListOfUsers", JSON.stringify(saveDataAsArray));
-      cards.forEach(card => card.removeEventListener('click', flipCard));
-      document.getElementById("docScore").innerHTML = score;
-      document.getElementById("docName").innerHTML = docName;
-      document.getElementById("finaltime").innerHTML = minutes + ":" + seconds;
+      // saveDataAsArray.push(currentDataOBJ);
+      // localStorage.setItem("ListOfUsers", JSON.stringify(saveDataAsArray));
+      // cards.forEach(card => card.removeEventListener('click', flipCard));
+      // document.getElementById("docScore").innerHTML = score;
+      // document.getElementById("docName").innerHTML = docName;
+      // document.getElementById("finaltime").innerHTML = minutes + ":" + seconds;
 
-      console.log(minutes + ":" + seconds)
-      $('#final').modal('show')
+      // console.log(minutes + ":" + seconds)
+      // $('#final').modal('show')
     }
   };
   // we don't want to wait a full second before the timer starts
@@ -111,7 +111,6 @@ function checkForMatch() {
     currentDataOBJ["name"] = getName;
     currentDataOBJ["correct"] = score;
     currentDataOBJ["scoretime"] = 60 - seconds;
-
     saveDataAsArray.push(currentDataOBJ);
     localStorage.setItem("ListOfUsers", JSON.stringify(saveDataAsArray));
     cards.forEach(card => card.removeEventListener('click', flipCard));
@@ -124,6 +123,7 @@ function checkForMatch() {
 
   }
 }
+
 
 function disableCards() {
   firstCard.removeEventListener('click', flipCard);
