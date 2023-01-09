@@ -222,15 +222,18 @@ $(document).ready(function () {
     exportData.forEach((el) => {
 
       myDataArray.push([
+
         el["name"],
         `${el["correct"]} of 9`,
         `${el["scoretime"]}` == 'undefined' ? '00:60 of 00:60 ' : `00:${el["scoretime"]} of 00:60`,
 
 
       ])
+
       // console.log(typeof `${el["scoretime"]}`)
-      console.log("scoretime", `${el["scoretime"]}` == 'undefined' ? '00:00' : `${el[`"00":"scoretime"`]}`)
+      // console.log("scoretime", `${el["scoretime"]}` == 'undefined' ? '00:00' : `${el[`"00":"scoretime"`]}`)
     });
+
 
 
     const doc = new jsPDF()
@@ -239,8 +242,10 @@ $(document).ready(function () {
         ['Dr.Name', 'Score', 'Time'
         ]
       ],
+
       body: myDataArray,
+
     })
-    doc.output('dataurlnewwindow');
+    window.open(doc.output('bloburl'), '_blank');
   });
 });
